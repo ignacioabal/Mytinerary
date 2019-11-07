@@ -1,0 +1,34 @@
+.GoArrow{
+  max-width: 40%;
+  /* margin-right: 7%; */
+}
+
+p{
+  margin-top: 15%;
+  margin-bottom: 15%;
+
+}
+
+.LeftLink{
+  float: left;
+  margin-left: 18%;
+} 
+
+.RightLink{
+  float:right;
+  margin-right: 14%;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.nav{
+    /* margin-left: 20%; */
+    /* left: 50%; */
+}
+
+.HomeIcon{
+  max-width: 15%;
+  /* margin-right: 7%; */
+}

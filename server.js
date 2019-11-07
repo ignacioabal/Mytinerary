@@ -1,20 +1,29 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
-const MongoClient = require('mongodb').MongoClient;
-var ObjectID = require('mongodb').ObjectID;
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
-const uri = "mongodb+srv://hsdle:42440959@mytinerarydb-bdqz3.gcp.mongodb.net/test?retryWrites=true&w=majority"
+const cities = require('./routes/api/cities');
+const db = require('./config/keys').URI;
 
-MongoClient.connect(uri, (err, database) => {
+//Middleware
+app.use(bodyParser.json());
 
-    if (err) return console.log(err);
 
-    app.listen(5000, () => {
-        console.log('app working');
+//DB  Connect
+mongoose.connect(db, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+    .then(() => console.log('Conectado a base de datos...'))
+    .catch((err) => console.log(err));
 
-    });
-})
+
+//Routes
+app.use('/cities/all', cities);
+
+
+
+app.listen(port, () => console.log(`Puerto: ${port}`));
+
 
 
 
