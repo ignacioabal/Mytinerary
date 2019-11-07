@@ -4,11 +4,14 @@ const port = process.env.PORT || 5000;
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+const cors = require('cors');
+
 const cities = require('./routes/api/cities');
 const db = require('./config/keys').URI;
 
 //Middleware
 app.use(bodyParser.json());
+app.use(cors());
 
 
 //DB  Connect
