@@ -1,8 +1,8 @@
 import React from 'react';
-// import './Cit.css';
+import { connect } from 'react-redux';
 
 
-const CityList = ({ cities }) => cities.map(city =>
+const CityList = ({ prop.cities }) => prop.cities.map(city =>
 
 
 
@@ -34,5 +34,13 @@ const CityList = ({ cities }) => cities.map(city =>
 
 
 
+const mapStateProps = state => {
+    console.log(state);
 
-export default CityList;
+    return {
+        city: state.cityReducer.city
+    }
+
+}
+
+export default connect(mapStateProps)(CityList);
