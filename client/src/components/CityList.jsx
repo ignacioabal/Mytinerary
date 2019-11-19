@@ -1,46 +1,53 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import FetchCities from "../redux/actions/cityActions";
 
 
-const CityList = ({ prop.cities }) => prop.cities.map(city =>
+class CityList extends Component {
+  componentWillMount() {
+    this.props.fetchCities();
+  }
 
-
-
-    <div className="card">
-        <img src={city.img} alt="" className="card img tot" />
-        <div className="card-body">
-            {city.name}
-        </div>
-    </div>
-
-
-
-
-
-
-
-);
-
-/* <li key={city._id}> {city.name} </li> */
-
-// const CityList = props => {
-//     let cities = props.cities;
-//     console.log(cities);
-
-//     return (
-
-//     )
-// }
-
-
-
-const mapStateProps = state => {
-    console.log(state);
-
-    return {
-        city: state.cityReducer.city
+  renderList() {
+    if (this.props.loading === true) {
+      return <h1>Loading...</h1>;
+    } else {
+      return this.props.cities.map(city => {
+        return (
+          <div className="card" key={city._id}>
+            <div className="card-body">
+              <h4><a href="#"> {city.name} </a></h4>
+            </div>
+          </div>
+        );
+      });
     }
+  }
 
+  render() {
+    let cities = this.props.cities;
+
+    return (
+
+       
+        <React.Fragment>{this.renderList()}</React.Fragment>
+      
+    );
+  }
 }
 
-export default connect(mapStateProps)(CityList);
+const mapStateProps = state => {
+//   console.log(state);
+
+  return {
+    cities: state.cityReducer.cities
+  };
+};
+const mapDispatchToProps = dispatch => {
+  
+
+  return {
+    fetchCities: () => dispatch(FetchCities())
+  };
+};
+export default connect(mapStateProps, mapDispatchToProps)(CityList);

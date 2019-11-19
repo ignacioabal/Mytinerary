@@ -5,8 +5,22 @@ import App from './App.jsx'
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 
+import store from './redux/store';
+
+// ---------------------Redux dependencies
 import { Provider } from 'react-redux';
-import store from './store';
+// import { composeWithDevTools } from "redux-devtools-extension";
+// import { createStore, applyMiddleware } from "redux";
+// import thunk from "redux-thunk";
+// import rootReducer from './redux/reducer/reducer';
+
+
+// const store = createStore(
+//     rootReducer,
+//     composeWithDevTools(applyMiddleware(thunk))
+// );
+
+
 
 
 ReactDOM.render(

@@ -4,30 +4,24 @@ import CityList from './CityList';
 import './Cities.css';
 import './HomeButton';
 import HomeButton from './HomeButton';
-
-import { connect } from 'react-redux';
-import updateEstado from '../actions/action';
-
+// import {cityReducer } from '../reducer/reducer'
+// import { connect } from 'react-redux';
+// import { updateEstado } from '../actions/action';
+// import {dispatch} from '.'
 
 class Cities extends Component {
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         cities: []
-    //     }
-    // }
-
+   
 
 
     render() {
         return (<React.Fragment>
-            <CityList cities={this.props.cities}></CityList>
+            <CityList></CityList>
             <HomeButton></HomeButton>
         </ React.Fragment>);
     }
 
     componentDidMount() {
-        this.fetchAPI();
+        // this.fetchAPI();
 
     }
 
@@ -35,7 +29,7 @@ class Cities extends Component {
     // fetchAPI = () => {
     //     fetch('http://localhost:5000/cities/all')
     //         .then(resp => resp.json())
-    //         .then(result => this.setState({ cities: result }))
+    //         .then(result => dispatch(cityReducer))
     //         .catch(err => console.log(err));
     // };
 
@@ -44,13 +38,22 @@ class Cities extends Component {
 
 
 
-const mapDispatchToProps = (dispatch) => {
-    console.log(dispatch);
+// const mapStateProps = state => {
+//     console.log(state);
 
-    return {
-        updateEstado: (data) => dispatch(updateEstado(data))
-    }
+//     return {
+//         city: state.cityReducer.city
+//     }
 
-}
+// }
+
+// const mapDispatchToProps = (dispatch) => {
+//     console.log(dispatch);
+
+//     return {
+//         updateEstado: (data) => dispatch(updateEstado(data))
+//     }
+
+// }
 
 export default Cities;
