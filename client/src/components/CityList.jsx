@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import FetchCities from "../redux/actions/cityActions";
 
 
+
 class CityList extends Component {
   componentWillMount() {
     this.props.fetchCities();
@@ -14,9 +15,9 @@ class CityList extends Component {
     } else {
       return this.props.cities.map(city => {
         return (
-          <div className="card" key={city._id}>
+          <div className="card cities" key={city._id}>
             <div className="card-body">
-              <h4><a href="#"> {city.name} </a></h4>
+              <h4><a href="#"> {city.name} / {city.country} </a></h4>
             </div>
           </div>
         );
@@ -28,10 +29,10 @@ class CityList extends Component {
     let cities = this.props.cities;
 
     return (
-
-       
-        <React.Fragment>{this.renderList()}</React.Fragment>
-      
+        <React.Fragment>
+           
+            {this.renderList()}
+        </React.Fragment> 
     );
   }
 }

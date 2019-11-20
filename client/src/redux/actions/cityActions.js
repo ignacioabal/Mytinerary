@@ -10,7 +10,6 @@ export default function fetchCities() {
         fetch(uri)
             .then(resp => resp.json())
             .then(res => {
-                console.log(res[0]);
                 
                 return dispatch(fetchCitiesSuccess(res))
             })

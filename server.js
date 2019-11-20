@@ -30,14 +30,3 @@ app.listen(port, () => console.log(`Puerto: ${port}`));
 
 
 
-// var router = express.Router();
-
-// router.get('/', function (req, res) {
-//     res.send('hello world');
-// })
-
-// app.use('/', router);
-
-// app.get('/sample', function (req, res) {
-//     res.send('this is a sample');
-// })
