@@ -13,6 +13,10 @@ let ItinerarySchema = new Schema({
         type: String,
         require: true
     },
+    profPic: {
+        type: String,
+        require: true
+    },
     //name of itinerary
     name: {
         type: String,
@@ -20,7 +24,7 @@ let ItinerarySchema = new Schema({
     },
     //tags of the itinerary
     tags: {
-        type: String,
+        type: [String],
         require: false
     },
     likes: {
@@ -31,8 +35,16 @@ let ItinerarySchema = new Schema({
         type: String,
         require: true
     },
+    duration:{
+        type: Number,
+        require: true
+    },
     date: {
         type: Date,
+        require: true
+    },
+    price: {
+        type: Number,
         require: true
     }
 

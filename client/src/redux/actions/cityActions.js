@@ -4,7 +4,7 @@ export default function fetchCities() {
     return dispatch => {
         dispatch(fetchCitiesRequest());
 
-        const uri = 'http://localhost:5000/cities/all';
+        const uri = 'http://localhost:5000/cities';
 
 
         fetch(uri)

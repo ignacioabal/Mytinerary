@@ -21,7 +21,7 @@ mongoose.connect(db, { useUnifiedTopology: true, useNewUrlParser: true, useCreat
 
 
 //Routes
-app.use('/cities/all', cities);
+app.use('/cities', cities);
 
 
 
