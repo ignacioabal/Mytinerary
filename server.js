@@ -16,7 +16,7 @@ app.use(cors());
 
 //DB  Connect
 mongoose.connect(db, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
-    .then(() => console.log('Conectado a base de datos...'))
+    .then(() => console.log('Conectado a base de datos.'))
     .catch((err) => console.log(err));
 
 

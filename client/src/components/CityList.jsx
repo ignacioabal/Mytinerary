@@ -35,13 +35,9 @@ class CityList extends Component {
     })
   };
 
-  renderList() {
-    // if (this.props.loading === true) {
-    //   return <h1>Loading...</h1>;
-    // } else {
-      
-      let cities = this.state.filteredCities;
-      return cities.map(city => {
+  renderList(elem) {     
+      // let cities = this.state.filteredCities;
+      return elem.map(city => {
         return (
           <div className="card cities" key={city._id}>
             <div className="card-body">
@@ -55,16 +51,13 @@ class CityList extends Component {
           </div>
         );
       });
-    // }
-  }
+    }
 
   render() {
-    // let cities = this.props.cities;
-
     return (
       <React.Fragment>
         <Filter onChange={this.filterCities}></Filter>
-        {this.state.filteredCities.length > 0 ? this.renderList() : <h1>...Loading</h1>
+        {this.state.filteredCities.length > 0 ? this.renderList(this.state.filteredCities) : this.renderList(this.props.cities)
   }
       </React.Fragment>
     );
