@@ -1,14 +1,22 @@
+// ----- REACT DEPENDENCIES
 import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+// ----- COMPONENTS
 import Header from './components/header/Header';
 import Home from './components/home/Home';
 import Login from './components/users/Login';
 import Register from './components/users/Register';
-import Cities from './components/cities/Cities'
-import { BrowserRouter, Route } from 'react-router-dom';
+import Cities from './components/cities/Cities';
 import './components/util/LandingPage.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/js/dist/dropdown'; import 'bootstrap/js/dist/carousel';
 import AvItineraries from './components/itineraries/AvailableItineraries';
+
+
+//------- BOOTSTRAP
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/js/dist/dropdown'; 
+import 'bootstrap/js/dist/carousel';
+import 'bootstrap/js/dist/collapse';
 
 
 
