@@ -32,7 +32,7 @@ let ItinerarySchema = new Schema({
         require: true
     },
     activities: {
-        type: String,
+        type: [String],
         require: true
     },
     duration:{

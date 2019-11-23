@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import CityList from './CityList';
 import './Cities.css';
-import './HomeButton';
-import HomeButton from './HomeButton';
+// import './HomeButton';
+import HomeButton from '../util/HomeButton';
 
 
 class Cities extends Component {

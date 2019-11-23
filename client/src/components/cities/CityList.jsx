@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import FetchCities from "../redux/actions/cityActions";
+import FetchCities from "../../redux/actions/cityActions";
 import Filter from "./CityFilter";
-import { TIMEOUT } from "dns";
-import { set } from "mongoose";
+import { Link } from 'react-router-dom';
+
+// import { TIMEOUT } from "dns";
+// import { set } from "mongoose";
 
 class CityList extends Component {
   constructor(props) {
@@ -42,10 +44,10 @@ class CityList extends Component {
           <div className="card cities" key={city._id}>
             <div className="card-body">
               <h4>
-                <a href="#">
+                <Link to={'/cities/'+ city.name}>
                   {" "}
                   {city.name} / {city.country}{" "}
-                </a>
+                </Link>
               </h4>
             </div>
           </div>

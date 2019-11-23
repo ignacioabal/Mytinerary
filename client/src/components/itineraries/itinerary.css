@@ -1,0 +1,40 @@
+#UserPic{
+    max-width: 75%;
+}
+
+#user p{
+    margin-top: 0.5%;
+    font-size: small;
+}
+
+#user{
+    /* margin-left: -5%; */
+    max-width: 40%;
+}
+
+#itinerary{
+    margin: 5% 1%;
+    
+}
+
+#details{
+    margin-top: 3%;
+    /* padding-right: 20%; */
+    padding-left: 0 ;
+}
+
+#details h3{
+    font-size: medium;
+}
+
+#details li{
+    font-size: small;
+    margin: 0 1em;
+}
+
+#tags ul{
+    /* float: left;  */
+    margin: 5% 0;
+    float: left;
+    /* margin: top */
+}
