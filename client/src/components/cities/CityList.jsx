@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import FetchCities from "../../redux/actions/cityActions";
 import Filter from "./CityFilter";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // import { TIMEOUT } from "dns";
 // import { set } from "mongoose";
@@ -15,9 +15,9 @@ class CityList extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchCities();
-    
+
     // while(this.state.filteredCities == null){
     //   this.setState({filteredCities: this.props.cities})
     // }
@@ -26,41 +26,41 @@ class CityList extends Component {
   filterCities = cityFilter => {
     let filteredCities = this.props.cities;
 
-    filteredCities = filteredCities.filter((city) => {
-      let fullName = city.name.toLowerCase() + city.country.toLowerCase()
-      return fullName.indexOf(
-        cityFilter.toLowerCase()) !== -1
+    filteredCities = filteredCities.filter(city => {
+      let fullName = city.name.toLowerCase() + city.country.toLowerCase();
+      return fullName.indexOf(cityFilter.toLowerCase()) !== -1;
     });
 
     this.setState({
       filteredCities
-    })
+    });
   };
 
-  renderList(elem) {     
-      // let cities = this.state.filteredCities;
-      return elem.map(city => {
-        return (
-          <div className="card cities" key={city._id}>
-            <div className="card-body">
-              <h4>
-                <Link to={'/cities/'+ city.name}>
-                  {" "}
-                  {city.name} / {city.country}{" "}
-                </Link>
-              </h4>
-            </div>
+  renderList(elem) {
+    // let cities = this.state.filteredCities;
+    return elem.map(city => {
+      return (
+        <div className="card cities" key={city._id}>
+          <div className="card-body">
+            <h4>
+              <Link to={"/cities/" + city.name}>
+                {" "}
+                {city.name} / {city.country}{" "}
+              </Link>
+            </h4>
           </div>
-        );
-      });
-    }
+        </div>
+      );
+    });
+  }
 
   render() {
     return (
       <React.Fragment>
         <Filter onChange={this.filterCities}></Filter>
-        {this.state.filteredCities.length > 0 ? this.renderList(this.state.filteredCities) : this.renderList(this.props.cities)
-  }
+        {this.state.filteredCities.length > 0
+          ? this.renderList(this.state.filteredCities)
+          : this.renderList(this.props.cities)}
       </React.Fragment>
     );
   }
