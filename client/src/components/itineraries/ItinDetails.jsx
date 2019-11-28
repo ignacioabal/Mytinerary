@@ -5,17 +5,16 @@ export default class Details extends Component {
     return (
       <div className="row">
         <div className="collapse" id="moreInfo">
-
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
           voluptates rem unde sunt, tempore reprehenderit pariatur aut nihil
           officia nesciunt commodi tenetur iure illum eveniet quidem eos harum
           delectus est!
         </div>
-        <div>
+        <div id="btnDet">
           <h4>
             <a
               href="#moreInfo"
-              className="btn    "
+              className="btn  btn-block  "
               role="button"
               data-toggle="collapse"
             >

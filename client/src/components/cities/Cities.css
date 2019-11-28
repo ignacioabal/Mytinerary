@@ -1,9 +1,13 @@
-.card{
-    margin: 0 auto;
-    width: 80%;
+.card {
+  margin: 1em auto;
+  width: 100%;
 }
 
-.homebtn{
-    margin-top: 10%;
-    max-width: 20%;
+.homebtn {
+  margin-top: 10%;
+  max-width: 20%;
+}
+
+#filter {
+  text-align: center;
 }
