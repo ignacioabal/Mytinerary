@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import Details from './ItinDetails';
 import './itinerary.css';
 
 
 export default class Itinerary extends Component {
     render() {
         return (
-            <article id="itinerary" className="row border">
+            <section>
+            <article id="itinerary" className="row">
                 <div id="user" className="col">
                     <img src={require("../../img/defaultAvatar.png")} alt="User Pic." id="UserPic"/>
                     <p>GaudiLover</p>
@@ -25,11 +27,13 @@ export default class Itinerary extends Component {
                         <ul className="nav">
                             <li className="nav-item">#art</li>
                             <li className="nav-item">#architecture</li>
-
                         </ul>
                     </div>
                 </div>
+                
             </article>
+            <Details></Details>
+            </section>
         )
     }
 }
