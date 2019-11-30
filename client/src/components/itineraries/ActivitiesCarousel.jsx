@@ -16,6 +16,7 @@ export default () => {
         leftChevron={<i className="fas fa-chevron-left"></i>}
         outsideChevron
         chevronWidth={chevronWidth}
+        infiniteLoop={true}
       >
         <div id="carItem">First Activity</div>
         <div id="carItem">Second Activity</div>
