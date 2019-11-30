@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 let ItinerarySchema = new Schema({
   //city where Itinerary takes place
   city_id: {
-    type: mongoose.Schema.types.ObjectId,
-    require: true
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "city"
   },
   country: {
     type: String,
@@ -52,4 +52,4 @@ let ItinerarySchema = new Schema({
   }
 });
 
-module.exports = Itinerary = mongoose.model("city", ItinerarySchema);
+module.exports = Itinerary = mongoose.model("itinerary", ItinerarySchema);
