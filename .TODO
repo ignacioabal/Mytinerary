@@ -1,3 +1,4 @@
 Finish itinerary component - DONE
     -ADD CAROUSEL OF ACTIVITIES/COMMENTS
-connect data to database - WIP
+Finish Redux-Itin connection - WIP
+    -get uri for the different cities?
