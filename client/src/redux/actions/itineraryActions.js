@@ -1,12 +1,12 @@
-export default function fetchItineraries() {
+export default function fetchItineraries(url) {
   // console.log("hola");
 
   return dispatch => {
     dispatch(fetchItinerariesRequest());
 
-    const uri = "http://localhost:5000/cities";
+    //const uri = "http://localhost:5000/cities";
 
-    fetch(uri)
+    fetch(url)
       .then(resp => resp.json())
       .then(res => {
         return dispatch(fetchItinerariesSuccess(res));
