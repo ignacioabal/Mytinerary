@@ -1,5 +1,11 @@
 Finish itinerary component - DONE
     -ADD CAROUSEL OF ACTIVITIES/COMMENTS
-Finish Redux-Itin connection - WIP
+
+Finish Redux-Itin connection - DONE
     -get uri for the different cities? -> SLACK HAS THE ANSWER
-Fetch data and pour into itin components - WIP
+
+Fetch data and pour into itin components - DONE
+
+Make each "See More" button individual - WIP
+    -Make different urls viable(?) - idk
+    
