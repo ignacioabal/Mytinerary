@@ -4,7 +4,7 @@
   margin-bottom: 2rem;
 }
 
-#carItem {
+.carItem {
   height: 150px;
   background-color: grey;
 }

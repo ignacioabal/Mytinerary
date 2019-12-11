@@ -41,7 +41,7 @@ class Itinerary extends Component {
               </div>
             </div>
           </article>
-          <Details asdf={itin._id}></Details>
+          <Details id={itin._id} acts={itin.activities}></Details>
         </section>
       );
     });
