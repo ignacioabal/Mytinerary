@@ -1,10 +1,6 @@
 export default function fetchItineraries(url) {
-  // console.log("hola");
-
   return dispatch => {
     dispatch(fetchItinerariesRequest());
-
-    //const uri = "http://localhost:5000/cities";
 
     fetch(url)
       .then(resp => resp.json())
@@ -15,9 +11,9 @@ export default function fetchItineraries(url) {
   };
 }
 
-const fetchItinerariesSuccess = cities => ({
+const fetchItinerariesSuccess = itins => ({
   type: "FETCH_ITINERARIES_SUCCESS",
-  payload: cities
+  payload: itins
 });
 
 const fetchItinerariesRequest = () => ({

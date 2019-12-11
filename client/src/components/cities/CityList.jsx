@@ -4,9 +4,6 @@ import FetchCities from "../../redux/actions/cityActions";
 import Filter from "./CityFilter";
 import { Link } from "react-router-dom";
 
-// import { TIMEOUT } from "dns";
-// import { set } from "mongoose";
-
 class CityList extends Component {
   constructor(props) {
     super(props);
@@ -17,10 +14,6 @@ class CityList extends Component {
 
   componentDidMount() {
     this.props.fetchCities();
-
-    // while(this.state.filteredCities == null){
-    //   this.setState({filteredCities: this.props.cities})
-    // }
   }
 
   filterCities = cityFilter => {
@@ -37,13 +30,12 @@ class CityList extends Component {
   };
 
   renderList(elem) {
-    // let cities = this.state.filteredCities;
     return elem.map(city => {
       return (
         <div className="card cities" key={city._id}>
           <div className="card-body">
             <h4>
-              <Link to={"/cities/" + city.name}>
+              <Link to={"/cities/" + city.country + "/" + city.name}>
                 {" "}
                 {city.name} / {city.country}{" "}
               </Link>
@@ -67,12 +59,11 @@ class CityList extends Component {
 }
 
 const mapStateProps = state => {
-  //   console.log(state);
-
   return {
     cities: state.cityReducer.cities
   };
 };
+
 const mapDispatchToProps = dispatch => {
   return {
     fetchCities: () => dispatch(FetchCities())

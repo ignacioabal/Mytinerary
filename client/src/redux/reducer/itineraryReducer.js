@@ -1,10 +1,10 @@
 const initialState = {
-  itineraries: [],
+  itins: [],
   loading: false,
   error: null
 };
 
-const cityReducer = (state = initialState, action) => {
+const itineraryReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_ITINERARIES_REQUEST":
       return {
@@ -16,7 +16,7 @@ const cityReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: null,
-        itineraries: action.payload
+        itins: action.payload
       };
     case "FETCH_ITINERARIES_FAILURE":
       return {
@@ -30,4 +30,4 @@ const cityReducer = (state = initialState, action) => {
   }
 };
 
-export default cityReducer;
+export default itineraryReducer;
