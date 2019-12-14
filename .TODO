@@ -2,7 +2,7 @@ Finish itinerary component - DONE
     -ADD CAROUSEL OF ACTIVITIES/COMMENTS
 
 Finish Redux-Itin connection - DONE
-    -get uri for the different cities? -> SLACK HAS THE ANSWER
+    -get uri for the different cities? - DONE
 
 Fetch data and pour into itin components - DONE
 
@@ -12,5 +12,10 @@ Make each "See More" button individual - WIP
 
 --moved on to sprint 4
 
-Create register & login page -WIP
+Create register & login page(visual) - DONE
+
+Create register & login page(Functionality) - WIP
+
+    + Register - WIP
+        - User mongo Model for fetch - WIP
     
