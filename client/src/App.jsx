@@ -5,7 +5,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 // ----- COMPONENTS
 import Home from "./components/home/Home";
 import Login from "./components/users/Login";
-import Register from "./components/users/Register";
+import Register from "./components/users/Register/Register";
 import Cities from "./components/cities/Cities";
 import "./components/util/LandingPage.css";
 import AvItineraries from "./components/itineraries/AvailableItineraries";

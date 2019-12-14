@@ -1,0 +1,12 @@
+#userImg {
+  margin-top: 1em;
+  width: 10em;
+  height: 10em;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#imgUpload {
+  display: none;
+}
