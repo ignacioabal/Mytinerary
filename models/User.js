@@ -14,7 +14,7 @@ let UserSchema = new Schema({
     type: String,
     require: true
   },
-  lastName: {
+  lastname: {
     type: String,
     require: true
   },
@@ -23,3 +23,5 @@ let UserSchema = new Schema({
     require: true
   }
 });
+
+module.exports = User = mongoose.modell("user", UserSchema);
