@@ -17,5 +17,7 @@ Create register & login page(visual) - DONE
 Create register & login page(Functionality) - WIP
 
     + Register - WIP
-        - User mongo Model for fetch - WIP
+        - User Schema model - DONE
+        - User Route - DONE
+        - User Validation - WIP(use express-validator)
     
