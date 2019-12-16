@@ -19,5 +19,6 @@ Create register & login page(Functionality) - WIP
     + Register - WIP
         - User Schema model - DONE
         - User Route - DONE
-        - User Validation - WIP(use express-validator)
+        - User Validation - DONE(use express-validator) - NEEDS TESTING
+        - Make POST request from front to back-end - WIP
     
