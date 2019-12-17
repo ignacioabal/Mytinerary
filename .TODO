@@ -16,9 +16,13 @@ Create register & login page(visual) - DONE
 
 Create register & login page(Functionality) - WIP
 
-    + Register - WIP
-        - User Schema model - DONE
-        - User Route - DONE
-        - User Validation - DONE(use express-validator) - NEEDS TESTING
-        - Make POST request from front to back-end - WIP
+BACK-END
+
+    + User Schema model - DONE
+    + User Route - DONE
+    + User Validation - DONE(use express-validator) - DONE
+    
+    + Register - DONE
+    
+    + Login - WIP        - 
     
