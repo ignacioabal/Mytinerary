@@ -21,13 +21,13 @@ export default class UserImage extends Component {
     return (
       <>
         <div>
-          <label for="imgUpload">
+          <label htmlFor="imgUpload">
             <div
               className="border rounded-circle"
               id="userImg"
               style={{ backgroundImage: `url("${this.state.file}")` }}
             ></div>
-            <label className="text-muted" for="imgUpload">
+            <label className="text-muted" htmlFor="imgUpload">
               Click to change
             </label>
           </label>

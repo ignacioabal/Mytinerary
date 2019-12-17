@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-import Register from "../Register/Register";
 import Header from "../../miniHeader/MiniHeader";
 import Form from "./loginForm";
 import Google from "./googleLogin";
