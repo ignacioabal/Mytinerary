@@ -13,7 +13,7 @@ class Itinerary extends Component {
   renderList(elem) {
     return elem.map(itin => {
       return (
-        <section>
+        <section key={itin._id}>
           <article id="itinerary" className="row">
             <div id="user" className="col">
               <img
@@ -27,15 +27,21 @@ class Itinerary extends Component {
               <h3 id="title">{itin.name}</h3>
               <div id="info">
                 <ul className="nav">
-                  <li className="nav-item">Likes: {itin.likes}</li>
-                  <li className="nav-item">{itin.duration} Hours</li>
-                  <li className="nav-item">${itin.price}</li>
+                  <li className="nav-item" key="likes">
+                    Likes: {itin.likes}
+                  </li>
+                  <li className="nav-item" key="Duration">
+                    {itin.duration} Hours
+                  </li>
+                  <li className="nav-item" key="price">
+                    ${itin.price}
+                  </li>
                 </ul>
               </div>
               <div id="tags">
                 <ul className="nav">
                   {itin.tags.map(tag => (
-                    <li> #{tag} </li>
+                    <li key={tag}> #{tag} </li>
                   ))}
                 </ul>
               </div>
