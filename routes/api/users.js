@@ -7,11 +7,11 @@ const { check, validationResult } = require("express-validator");
 const User = require("../../models/User");
 let validationArray = [
   check("email").isEmail(),
-  check("username").isEmpty(),
-  check("firstname").isEmpty(),
-  check("lastname").isEmpty(),
-  check("password").isEmpty(),
-  check("email").isEmpty()
+  check("username").exists(),
+  check("firstname").exists(),
+  check("lastname").exists(),
+  check("password").exists(),
+  check("email").exists()
 ];
 
 router.post("/register", validationArray, (req, res) => {
@@ -29,13 +29,15 @@ router.post("/register", validationArray, (req, res) => {
         email: req.body.email,
         password: req.body.password,
         firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        profPic: req.body.userpic
+        lastname: req.body.lastname
+        // profPic: req.body.userpic
       });
+      console.log(newUser);
+
       bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(user.password, salt, (err, hash) => {
+        bcrypt.hash(newUser.password, salt, function(err, hash) {
           if (err) throw err;
-          user.password = hash;
+          newUser.password = hash;
           newUser
             .save()
             .then(user => res.json(user))
@@ -45,3 +47,10 @@ router.post("/register", validationArray, (req, res) => {
     }
   });
 });
+
+/*
+router.get("/login",(req,res) =>{
+
+})
+*/
+module.exports = router;
