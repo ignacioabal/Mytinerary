@@ -24,5 +24,7 @@ BACK-END
     
     + Register - DONE
     
-    + Login - WIP        - 
+    + Login - WIP
+        - db find by email and token - DONE
+        - token auth - WIP
     
