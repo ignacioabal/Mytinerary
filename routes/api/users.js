@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken');
+const config = require('config');
 const { check, validationResult } = require("express-validator");
 
 //User model
@@ -35,7 +37,7 @@ router.post("/register", validationArray, (req, res) => {
       console.log(newUser);
 
       bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newUser.password, salt, function(err, hash) {
+        bcrypt.hash(newUser.password, salt, function (err, hash) {
           if (err) throw err;
           newUser.password = hash;
           newUser
@@ -48,9 +50,39 @@ router.post("/register", validationArray, (req, res) => {
   });
 });
 
-/*
-router.get("/login",(req,res) =>{
+router.post("/login", (req, res) => {
 
+  User.findOne({ email: req.body.email }).then(user => { 
+    if (!user) { 
+      return res.status(400).json({ msg: "User does not exist" })
+     } else{
+       bcrypt.compare(req.body.password, user.password)
+       .then(isMatch => {
+         if(!isMatch) return res.status(400).json({msg: "invalid credentials"});
+
+         jwt.sign(
+           {id: user.id},
+           config.get('jwtSecret'),
+           {expiresIn: 3200},
+           (err, token) => {
+             if(err) throw err;
+
+             res.json({
+               token,
+               user: {
+                 id: user.id
+               }
+             })
+           }
+         )
+
+         
+       })
+         
+       
+     }
+  })
+.catch(err => res.send(err));
 })
-*/
+
 module.exports = router;
