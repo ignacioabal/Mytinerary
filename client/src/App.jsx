@@ -26,8 +26,7 @@ class App extends React.Component {
           <Route path="/register" exact component={Register} />
           <Route path="/cities" exact component={Cities} />
           <Route
-            path="/cities/spain/barcelona"
-            exact
+            path="/itineraries"
             component={AvItineraries}
           />
         </div>

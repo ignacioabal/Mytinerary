@@ -1,9 +1,26 @@
-.CarImg{
-    margin: 5%;
-   
+
+
+#barcelona{
+    background: url(https://www.hoteles-silken.com/content/imgsxml/galerias/panel_sliderheadercorporativo/1/barcelona-istock-148543868629.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.image{
-    position: relative;
+#rome{
+    background: url(https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6c/2c/70.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-   
+
+#munich{
+    background: url(https://as.com/showroom/imagenes/2019/01/09/portada/1547048847_099606_1547049527_noticia_normal.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cityName{
+    /* padding: 37% 0; */
+    background-color: grey;
+    height: 0.5rem;
+    /* position: fixed; */
+}

@@ -3,15 +3,6 @@ import ItemsCarousel from "react-items-carousel";
 import "./Carousel.css";
 
 export default function Carousel() {
-  // getActivities() {
-  //   let acts = this.props.acts;
-
-  //   acts.map(acts => {
-  //     return <div className="carItem">{acts}</div>;
-  //   });
-  // }
-
-  // render() {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const chevronWidth = 40;
   return (
@@ -33,5 +24,4 @@ export default function Carousel() {
       </ItemsCarousel>
     </div>
   );
-  // }
 }

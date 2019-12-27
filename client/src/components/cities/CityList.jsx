@@ -35,7 +35,7 @@ class CityList extends Component {
         <div className="card cities" key={city._id}>
           <div className="card-body">
             <h4>
-              <Link to={"/cities/" + city.country + "/" + city.name}>
+              <Link to={"/itineraries/" + city.country + "/" + city.name}>
                 {" "}
                 {city.name} / {city.country}{" "}
               </Link>

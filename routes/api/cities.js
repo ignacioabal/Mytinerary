@@ -8,13 +8,13 @@ const Itinerary = require("../../models/Itinerary");
 // GET /all
 // Get all cities
 
-router.get("/", (req, res) => {
+router.get("/cities", (req, res) => {
   City.find()
     .then(cities => res.json(cities))
     .catch(error => console.log(error));
 });
 
-router.get("/:country/:city", (req, res) => {
+router.get("/itineraries/:country/:city", (req, res) => {
   let cityRequested = req.params.city;
   let country = req.params.country;
 

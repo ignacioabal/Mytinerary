@@ -9,22 +9,23 @@ const { check, validationResult } = require("express-validator");
 //User model
 const User = require("../../models/User");
 const validationArray = [
-  check("email").isEmail(),
-  check("username").exists(),
-  check("firstname").exists(),
-  check("lastname").exists(),
-  check("password").exists(),
-  check("email").exists()
+  check("email").notEmpty(),
+  check('email').isEmail(),
+  check("username").notEmpty(),
+  check("firstname").notEmpty(),
+  check("lastname").notEmpty(),
+  check("password").notEmpty()
 ];
 
 router.post("/register", validationArray, (req, res) => {
+
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
   }
 
-  User.findOne({ email: req.body.email }).then(us => {
-    if (us) {
+  User.findOne({ email: req.body.email }).then(user => {
+    if (user) {
       return res.status(400).json({ email: "Email already exists." });
     } else {
       const newUser = new User({
@@ -35,10 +36,10 @@ router.post("/register", validationArray, (req, res) => {
         lastname: req.body.lastname
         // profPic: req.body.userpic
       });
-      //console.log(newUser);
+      console.log(newUser);
 
       bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newUser.password, salt, function(err, hash) {
+        bcrypt.hash(newUser.password, salt, function (err, hash) {
           if (err) throw err;
           newUser.password = hash;
           newUser
@@ -50,15 +51,7 @@ router.post("/register", validationArray, (req, res) => {
                 (err, token) => {
                   if (err) throw err;
                   res.json({
-                    token,
-                    user: {
-                      id: user.id,
-                      username: user.username,
-                      email: user.email,
-                      password: user.password,
-                      firstname: user.firstname,
-                      lastname: user.lastname
-                    }
+                    token
                   });
                 }
               )
@@ -97,7 +90,8 @@ router.post("/login", (req, res) => {
         });
       });
     });
-  });
+  })
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

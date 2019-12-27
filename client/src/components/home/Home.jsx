@@ -21,7 +21,7 @@ class Home extends React.Component {
           ></ImgButton>
           <p>Popular MYtineraries</p>
 
-          <Carousel />
+          <Carousel> </Carousel>
         </main>
       </React.Fragment>
     );

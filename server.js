@@ -29,7 +29,7 @@ mongoose
   .catch(err => console.log(err));
 
 //Routes
-app.use("/cities", cities);
+app.use("/", cities);
 app.use("/", users);
 
 app.listen(port, () => console.log(`Puerto: ${port}`));
