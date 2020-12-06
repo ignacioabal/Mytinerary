@@ -17,22 +17,22 @@ import "bootstrap/js/dist/carousel";
 import "bootstrap/js/dist/collapse";
 
 class App extends React.Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <div className="App container">
-          <Route path="/" exact component={Home} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/register" exact component={Register} />
-          <Route path="/cities" exact component={Cities} />
-          <Route
-            path="/itineraries"
-            component={AvItineraries}
-          />
-        </div>
-      </BrowserRouter>
-    );
-  }
+    render() {
+        return (
+            <BrowserRouter>
+                <div className="App container">
+                    <Header />
+
+                    <Route path="/" exact component={Home} />
+                    <Route path="/login" exact component={Login} />
+                    <Route path="/register" exact component={Register} />
+                    <Route path="/cities" exact component={Cities} />
+                    <Route path="/cities/:city" exact render={(props)=><AvItineraries {... props}/>}/>
+
+                </div>
+            </BrowserRouter>
+        );
+    }
 }
 
 export default App;

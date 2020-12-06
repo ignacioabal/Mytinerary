@@ -52,4 +52,4 @@ let ItinerarySchema = new Schema({
   }
 });
 
-module.exports = Itinerary = mongoose.model("itinerary", ItinerarySchema);
+module.exports = Itinerary = mongoose.model('itinerary', ItinerarySchema);

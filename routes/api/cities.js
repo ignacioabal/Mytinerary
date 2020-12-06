@@ -15,8 +15,7 @@ router.get("/cities", (req, res) => {
 });
 
 router.get("/itineraries/:country/:city", (req, res) => {
-  let cityRequested = req.params.city;
-  let country = req.params.country;
+    let cityRequested = req.params.city;
 
   //capitalize the first letter of the requested city
   cityRequested =
