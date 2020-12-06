@@ -34,10 +34,10 @@ let ItinerarySchema = new Schema({
     type: Number,
     require: true
   },
-  //   activities: {
-  //     type: [String],
-  //     require: true
-  //   },
+  activities: {
+      type: [String],
+      require: true
+  },
   duration: {
     type: Number,
     require: true
